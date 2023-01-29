@@ -1,0 +1,14 @@
+{
+    "name":"mvc/framework",
+    "description":"itrax framework",
+    "type":"framework",
+    "license":"MIT",
+    "require": {
+        "php":"^8"
+    },
+    "autoload":{
+        "psr-4":{
+          "itrax\\" : "app"
+        }
+    }
+}
