@@ -3,9 +3,9 @@
     use PDO;
     use itrax\core\dbHandler;
 use PDOException;
-
     class db implements dbHandler{
         private $conn;
+        private $table;
         function __construct($db_engine="mysql", $db_host="localhost", $db_name="store_front", $db_user="root", $db_user_password="")
         {   
             try{
@@ -16,26 +16,28 @@ use PDOException;
             catch(PDOException $e){
                 echo "connection faild:".$e->getMessage();
             }
+            $model_class_name = explode("\\", STATIC::class);
+            $this->table = trim($model_class_name[2], "Model");
         }
 
-        function selectAll($table){
-            $stmt = $this->conn->query("SELECT * FROM $table");
+        function selectAll(){
+            $stmt = $this->conn->query("SELECT * FROM $this->table");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
-        function select($table, $id){
-            $stmt = $this->conn->prepare("SELECT * FROM `$table` WHERE id=:id");
+        function select($id){
+            $stmt = $this->conn->prepare("SELECT * FROM `$this->table` WHERE id=:id");
             $stmt->execute(['id'=>$id]);
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
 
-        function delete($table, $id){
-            $sql = "DELETE FROM `$table` WHERE id=:id";
+        function delete($id){
+            $sql = "DELETE FROM `$this->table` WHERE id=:id";
             $this->execute($sql, ['id'=>$id]);
         }
 
-        function insert($table, $data){
-            $sql = "INSERT INTO `$table` (";
+        function insert($data){
+            $sql = "INSERT INTO `$this->table` (";
             foreach($data as $key=>$value){
                 $sql .= "$key,";
             }
@@ -49,8 +51,8 @@ use PDOException;
             $this->execute($sql, $data);
         }
 
-        function update($table, $data){
-            $sql = "UPDATE `$table` SET ";
+        function update($data){
+            $sql = "UPDATE `$this->table` SET ";
             foreach($data as $key=>$value){
                 if($key != 'id')
                     $sql .= "`$key`=:$key,";

@@ -1,3 +1,3 @@
 <?php
-    echo "user View";
+    // echo "user View";
 ?>

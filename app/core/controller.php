@@ -1,18 +1,12 @@
 <?php
     namespace itrax\core;
-    use itrax\core\db;
+    use itrax\models\userModel;
     class Controller{
         protected function view($path){
-            $db = new db();
-            // $db->insert("category", ['name'=>'fruit', 'description'=>'fruit are usefull']);
-            // $db->update("category", ['name'=>'vegetable', 'description'=>'vegetable are usefull', 'id'=>5]);
-            // $db->delete('category', 4);
-            $categories = $db->selectAll("category");
+            $user = new userModel;
+            $users = $user->getAllUsers();
             echo "<pre>";
-            print_r($categories);
-            $vegetable = $db->select("category", 5);
-            print_r($vegetable);
-            echo "</pre>";
+            print_r($users);
             require VIEWS.$path.".php";
         }
     }
