@@ -1,16 +1,18 @@
 <?php
     namespace itrax\core;
     use PDO;
+    use PDOException;
+    use Dotenv;
     use itrax\core\dbHandler;
-use PDOException;
     class db implements dbHandler{
         private $conn;
         private $table;
-        function __construct($db_engine="mysql", $db_host="localhost", $db_name="store_front", $db_user="root", $db_user_password="")
+        function __construct()
         {   
             try{
-                $dsn = "$db_engine:host=$db_host;dbname=$db_name";
-                $this->conn = new PDO($dsn,$db_user, $db_user_password);
+                $dotenv = Dotenv\Dotenv::createImmutable(ROOT.DS.MVC);
+                $dotenv->load();
+                $this->conn = new PDO($_ENV['DB_DSN'],$_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD']);
                 $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             }
             catch(PDOException $e){

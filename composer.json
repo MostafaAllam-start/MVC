@@ -4,7 +4,8 @@
     "type":"framework",
     "license":"MIT",
     "require": {
-        "php":"^8"
+        "php":"^8",
+        "vlucas/phpdotenv": "^5.5"
     },
     "autoload":{
         "psr-4":{
