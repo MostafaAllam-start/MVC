@@ -1,15 +1,16 @@
 <?php
     namespace itrax\core;
     class app{
-        
         private $controller;
         private $method;
         private $params;
+
         function __construct()
         {  
             $this->url();
             $this->render();
         }
+
         private function url(){
             if(!empty($_SERVER['QUERY_STRING'])){
                 $url = explode("/", $_SERVER['QUERY_STRING']);

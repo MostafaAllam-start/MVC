@@ -5,8 +5,8 @@
         function getAllUsers(){
             return $this->selectAll();
         }
-        function getUserDetails($id){
-            return $this->select( $id);
+        function getUserDetails($params){
+            return $this->select($params);
         }
         function insertUser($data){
             $this->insert($data);
