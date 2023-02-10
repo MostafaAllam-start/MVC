@@ -1,6 +1,6 @@
 <?php
     namespace itrax\core;
-    class app{
+    class App{
         private $controller;
         private $method;
         private $params;

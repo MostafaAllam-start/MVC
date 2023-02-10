@@ -1,14 +1,14 @@
 <?php 
     namespace itrax\models;
-    use itrax\core\db;
-    class userModel extends db{
+    use itrax\core\DB;
+    class UserModel extends DB{
         function getAllUsers(){
             return $this->selectAll();
         }
         function getUserDetails($params){
             return $this->select($params);
         }
-        function insertUser($data){
+        function addUser($data){
             $this->insert($data);
         }
         function updateUser($data){

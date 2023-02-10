@@ -4,7 +4,7 @@
 
     class Helper{
         static function redirect($path){
-            header("Location: http://localhost/MVC/".$path);
+            header("Location:".MAIN_ROUT.$path);
         }
     }
 

@@ -1,6 +1,6 @@
 <?php
     namespace itrax\core;
-    interface dbHandler{
+    interface DBHandler{
         function selectAll();
         function select($id);
         function delete($id);

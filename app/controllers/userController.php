@@ -1,9 +1,9 @@
 <?php 
     namespace itrax\controllers;
     use itrax\core\Controller;
-    use itrax\models\userModel;
+    use itrax\models\UserModel;
     use itrax\core\Helper;
-    class userController extends Controller{
+    class UserController extends Controller{
         public function index(){
             session_start();
             if(!isset($_SESSION['user'])){
@@ -22,7 +22,7 @@
             session_start();
             $email = $_POST['email'];
             $password = $_POST['password'];
-            $user_object = new userModel;
+            $user_object = new UserModel;
             $user_data = $user_object->getUserDetails(['email'=>$email, 'password'=>$password]);
             if(!empty($user_data)){
                 $_SESSION['user'] = $user_data;

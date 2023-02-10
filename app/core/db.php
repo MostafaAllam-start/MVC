@@ -2,8 +2,8 @@
     namespace itrax\core;
     use PDO;
     use PDOException;
-    use itrax\core\dbHandler;
-    class db implements dbHandler{
+    use itrax\core\DBHandler;
+    class DB implements DBHandler{
         private $conn;
         private $table;
         function __construct()
@@ -63,6 +63,7 @@
             }
             $sql = rtrim($sql, ',');
             $sql .= " WHERE id=:id"; 
+            echo "$sql";
             $this->execute($sql, $data);
         }
     
