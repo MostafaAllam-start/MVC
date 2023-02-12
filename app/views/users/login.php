@@ -1,7 +1,7 @@
 <?php
     require _PUBLIC."layout/head.php";
 ?>
-<div class="login-box mx-auto">
+<div class="login-box mx-auto my-4">
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
@@ -44,9 +44,9 @@
         </div>
       </form>
     <?php 
-        if(isset($_SESSION['errors']['login'])){
-            $error = $_SESSION['errors']['login'];
-            unset($_SESSION['errors']['login']);
+        if(isset($_SESSION['error'])){
+            $error = $_SESSION['error'];
+            unset($_SESSION['error']);
             echo "<p class='login-box-msg' style='color:red'>$error</p>";
         }
     ?>

@@ -23,7 +23,11 @@
             $stmt = $this->conn->query("SELECT * FROM $this->table");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-
+        function customSelect($sql){
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
         function select($params){
             $sql = "SELECT * FROM `$this->table` WHERE ";
             foreach($params as $key=>$value){
@@ -63,7 +67,6 @@
             }
             $sql = rtrim($sql, ',');
             $sql .= " WHERE id=:id"; 
-            echo "$sql";
             $this->execute($sql, $data);
         }
     

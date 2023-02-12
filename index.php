@@ -9,6 +9,7 @@
     define("VENDOR", ROOT.DS.MVC.DS."vendor".DS);
     define("_PUBLIC", ROOT.DS.MVC.DS."public".DS);
     define("ASSETS", "http://localhost/MVC/public/assets/");
+    define("UPLOADED_FILES", "http://localhost/MVC/public/images/");
     define("MAIN_ROUT", "http://localhost/MVC/");
     require_once VENDOR.'autoload.php';
     $dotenv = Dotenv\Dotenv::createImmutable(ROOT.DS.MVC);

@@ -26,11 +26,11 @@
             $user_data = $user_object->getUserDetails(['email'=>$email, 'password'=>$password]);
             if(!empty($user_data)){
                 $_SESSION['user'] = $user_data;
-                unset($_SESSION['errors']["login"]);
+                unset($_SESSION['error']);
                 Helper::redirect("user/index");
             }
             else{
-                $_SESSION['errors']['login'] = 'Username or Password is not correct.';
+                $_SESSION['error'] = 'Username or Password is not correct.';
                 Helper::redirect("user/login");
             }
         }
