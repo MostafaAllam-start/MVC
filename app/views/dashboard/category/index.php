@@ -5,13 +5,10 @@
     <a class="btn btn-primary" style="float:right" href="add">Add Post</a>
     <div style="clear:both"></div>
 </div>
+
 <!-- /.col -->
 <div class="col-md-12 mx-auto">
     <div class="card">
-        <div class="card-header">
-        <h3 class="card-title">Categories</h3>
-
-        <!-- /.card-header -->
         <div class="card-body p-0">
         <table class="table">
             <thead>

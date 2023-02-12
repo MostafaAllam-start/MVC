@@ -1,17 +1,11 @@
 <?php
     namespace itrax\core;
     class Controller{
-        // // importing the model class name 
-        // protected $model;
-        // public function __construct()
-        // {
-        //     $controller_class_name = explode("\\", STATIC::class)[2];
-        //     $model_class_name = "itrax\\models\\".trim($controller_class_name, 'Controller')."tModel";
-        //     if(class_exists($model_class_name));
-        //         $this->model = new $model_class_name;
-        // }
+        protected $title;
         protected function view($path, $params=[]){
             extract($params);
+            $class_name = explode("\\", STATIC::class)[2];
+            $title = substr_replace($class_name, "", -10);
             require VIEWS.$path.".php";
         }
         protected function checkLogin(){

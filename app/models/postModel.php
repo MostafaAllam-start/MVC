@@ -1,7 +1,6 @@
 <?php
     namespace itrax\models;
     use itrax\core\DB;
-use PDO;
 
     class PostModel extends DB{
         public function addPost($title, $description, $img, $user_id, $category_id){

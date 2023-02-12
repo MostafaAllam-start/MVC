@@ -8,10 +8,6 @@
 <!-- /.col -->
 <div class="mx-auto">
     <div class="card">
-        <div class="card-header">
-        <h3 class="card-title">Posts</h3>
-
-        <!-- /.card-header -->
         <div class="card-body p-0">
         <table class="table">
             <thead>
