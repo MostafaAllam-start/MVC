@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Simple Tables</title>
+  <title>CMS</title>
 
 <!-- Google Font: Source Sans Pro -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Font Awesome -->
 <link rel="stylesheet" href="<?=ASSETS?>plugins/fontawesome-free/css/all.min.css">
 <!-- icheck bootstrap -->
@@ -29,7 +30,7 @@
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->
       <li class="nav-item">
-        <a class="nav-link" data-widget="navbar-search" href="/MVC/user/logout" role="button">
+        <a class="nav-link" href="/MVC/user/logout">
         <i class="fa fa-sign-out" aria-hidden="true"></i>
         <span>logout</span>
         </a>
@@ -82,10 +83,18 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/MVC/post/index" class="nav-link">
+            <a href="/MVC/user/index" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Users
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/MVC/site_setting/theam" class="nav-link">
+            <i class="fa-solid fa-palette"></i>
+              <p>
+                Theam
               </p>
             </a>
           </li>
@@ -103,14 +112,14 @@
                 <!-- left column -->
                 <div class="col-md-12">
                   <div class="content-header">
-                        <div class="container-fluid">
-                          <div class="row mb-2">
-                            <div class="col-sm-6">
-                              <h1 class="m-0"><?=$title?></h1>
-                            </div><!-- /.col -->
-                          </div><!-- /.row -->
-                        </div><!-- /.container-fluid -->
-                      </div>   
+                    <div class="container-fluid">
+                      <div class="row mb-2">
+                        <div class="col-sm-6">
+                          <h1 class="m-0"><?=$title?></h1>
+                        </div>
+                      </div>
+                    </div>
+                  </div>   
                   <?php if(isset($_SESSION['success'])):?>
                   <div class="alert alert-success alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -120,14 +129,14 @@
                       unset($_SESSION['success']);
                     ?>
                   </div>
-                <?php endif?>
-                <?php if(isset($_SESSION['error'])):?>
-                  <div class="alert alert-danger alert-dismissible">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                    <h5><i class="icon fas fa-check"></i> Error!</h5>
-                    <?php 
-                      echo $_SESSION['error'];
-                      unset($_SESSION['error']);
-                    ?>
-                  </div>
-                <?php endif?>
+                  <?php endif?>
+                  <?php if(isset($_SESSION['error'])):?>
+                    <div class="alert alert-danger alert-dismissible">
+                      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                      <h5><i class="icon fas fa-check"></i> Error!</h5>
+                      <?php 
+                        echo $_SESSION['error'];
+                        unset($_SESSION['error']);
+                      ?>
+                    </div>
+                  <?php endif?>

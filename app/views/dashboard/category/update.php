@@ -1,5 +1,5 @@
 <?php 
-    require _PUBLIC.'layout/head.php';
+    require DASHBOARD_LAYOUT.'head.php';
 ?>
      <!-- general form elements -->
     <div class="card card-primary">
@@ -25,5 +25,5 @@
     </div>
     <!-- /.card -->
 <?php 
-    require _PUBLIC.'layout/footer.php';
+    require DASHBOARD_LAYOUT.'footer.php';
 ?>

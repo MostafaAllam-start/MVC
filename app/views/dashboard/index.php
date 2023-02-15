@@ -1,5 +1,5 @@
 <?php 
-    require _PUBLIC."layout/head.php";
+    require DASHBOARD_LAYOUT."head.php";
 ?>
     <section class="content">
       <div class="container-fluid">
@@ -70,5 +70,5 @@
       </div><!-- /.container-fluid -->
     </section>
 <?php 
-    require _PUBLIC."layout/footer.php";
+    require DASHBOARD_LAYOUT."footer.php";
 ?>

@@ -33,7 +33,7 @@
             if(isset($_POST['submit'])){
                 $img = $this->currentTime.$_FILES["img"]["name"];
                 $tempname = $_FILES["img"]["tmp_name"];
-                $folder = _PUBLIC."images/" . $img;
+                $folder = UPLOADED_IMGES_PATH . $img;
                 if(strlen($img) != 0 && strlen($tempname) != 0){
                     $this->postModel->addPost($_POST['title'], $_POST['description'], $img, $_POST['user'], $_POST['category']);
                     if(!move_uploaded_file($tempname, $folder)){
@@ -58,7 +58,7 @@
                 if(isset($_FILES['img']) && $_FILES['img']['size'] != 0){
                     $img = $this->currentTime.$_FILES["img"]["name"];
                     $tempname = $_FILES['img']['tmp_name'];
-                    $folder = _PUBLIC. "images/" . $img;
+                    $folder = UPLOADED_IMGES_PATH . $img;
                     $_POST['img'] = $img;
                     if(!move_uploaded_file($tempname, $folder)){
                         $_SESSION['error'] = "There was a problem while uploading the image.";
@@ -66,7 +66,7 @@
                     else{
                         $_SESSION['success'] = "The post is Updated successfully.";
         
-                        $old_img = _PUBLIC. "images\\" . $this->postModel->getPostDetails($_POST['id'])['img'];
+                        $old_img = UPLOADED_IMGES_PATH . $this->postModel->getPostDetails($_POST['id'])['img'];
                         unlink($old_img);
                         $this->postModel->updatePost($_POST);
                         Helper::redirect('post/index');
@@ -76,7 +76,7 @@
             }
         }
         public function delete($id){
-            $old_img = _PUBLIC. "images\\" . $this->postModel->getPostDetails($id)['img'];
+            $old_img = UPLOADED_IMGES_PATH . $this->postModel->getPostDetails($id)['img'];
             unlink($old_img);
             $this->postModel->deletePost($id);
             $_SESSION['success'] = 'The post is deleted successfully.';

@@ -1,5 +1,5 @@
 <?php
-    require _PUBLIC."layout/head.php";
+    require DASHBOARD_LAYOUT."head.php";
 ?>
 <div class="my-2 mr-2">
     <a class="btn btn-primary" style="float:right" href="add">Add Post</a>
@@ -43,6 +43,6 @@
     <!-- /.card-body -->
 </div>
 <?php
-    require _PUBLIC."layout/footer.php";
+    require DASHBOARD_LAYOUT."footer.php";
 ?>
 

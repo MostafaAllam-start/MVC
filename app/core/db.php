@@ -16,11 +16,11 @@
                 echo "connection faild:".$e->getMessage();
             }
             $model_class_name = explode("\\", STATIC::class);
-            $this->table = trim($model_class_name[2], "Model");
+            $this->table = substr_replace($model_class_name[2], "", -5);
         }
 
         function selectAll(){
-            $stmt = $this->conn->query("SELECT * FROM $this->table");
+            $stmt = $this->conn->query("SELECT * FROM `$this->table`");
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         function customSelect($sql){
