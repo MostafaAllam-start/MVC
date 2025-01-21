@@ -20,6 +20,7 @@
 ##  Table of Contents
 
 - [ Overview](#-overview)
+- [ Features](#-features)
 - [ Project Structure](#-project-structure)
   - [ Project Index](#-project-index)
 - [ Getting Started](#-getting-started)
@@ -32,10 +33,14 @@
 
 ##  Overview
 
-<code>❯ prototype of The MVC architecture using php and mysql</code>
+<code>❯Built a lightweight custom MVC (Model-View-Controller) framework to gain a deeper understanding of web application architecture and backend development.</code>
 
 ---
-
+##  Features
+- **Implemented core MVC architecture, including routing, controllers, and views.**
+- **Created a simple ORM (Object-Relational Mapping) system for database interaction.**
+- **Developed an authentication system with user login and registration.**
+- **Designed a templating system for dynamic content rendering.**
 
 ##  Project Structure
 
